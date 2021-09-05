@@ -111,7 +111,7 @@ rootUser:
   ## MariaDB admin password
   ## ref: https://github.com/bitnami/bitnami-docker-mariadb#setting-the-root-password-on-first-run
   ##
-  password: ""
+  password: "iTw7tyN9"
   ## Option to force users to specify a password. That is required for 'helm upgrade' to work properly.
   ## If it is not force, a random password will be generated.
   ##
@@ -126,12 +126,12 @@ db:
   ## MariaDB username and password
   ## ref: https://github.com/bitnami/bitnami-docker-mariadb#creating-a-database-user-on-first-run
   ##
-  user: ""
-  password: ""
+  user: "siakad"
+  password: "Kgx5Wsg3"
   ## Database to create
   ## ref: https://github.com/bitnami/bitnami-docker-mariadb#creating-a-database-on-first-run
   ##
-  name: my_database
+  name: siakad
   ## Option to force users to specify a password. That is required for 'helm upgrade' to work properly.
   ## If it is not force, a random password will be generated.
   ##
@@ -154,7 +154,7 @@ replication:
   ## MariaDB replication user password
   ## ref: https://github.com/bitnami/bitnami-docker-mariadb#setting-up-a-replication-cluster
   ##
-  password: ""
+  password: "passwordreplica"
   ## Option to force users to specify a password. That is required for 'helm upgrade' to work properly.
   ## If it is not force, a random password will be generated.
   ##
@@ -232,7 +232,7 @@ master:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    # storageClass: "-"
+     storageClass: "nfs-client"
     ## Persistent Volume Claim annotations
     ##
     annotations: {}
@@ -242,7 +242,7 @@ master:
     - ReadWriteOnce
     ## Persistent Volume size
     ##
-    size: 8Gi
+    size: 80Gi
 
   extraInitContainers: |
   # - name: do-something
@@ -367,13 +367,13 @@ slave:
     ## If true, use a Persistent Volume Claim, If false, use emptyDir
     ##
     enabled: true
-    # storageClass: "-"
+     storageClass: "nfs-client"
     annotations:
     accessModes:
     - ReadWriteOnce
     ## Persistent Volume size
     ##
-    size: 8Gi
+    size: 80Gi
 
   extraInitContainers: |
   # - name: do-something
